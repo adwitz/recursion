@@ -11,7 +11,7 @@ var getElementsByClassName = function (className) {
 	function elementsByClass(element, className, array){
 		var elements = element.childNodes;
 		for (var i in elements){
-			child = elements[i]
+			child = elements[i];
 			if (typeof child === 'object'){
 				//is this legal?
 				if($(child).hasClass(className)){
