@@ -6,7 +6,6 @@
 // But in stead we're going to implement it from scratch:
 var getElementsByClassName = function (className) {
 	// your code here
-	var element = document.body;
 	var arr = [];
   
 	function elementsByClass(element, className, array){
