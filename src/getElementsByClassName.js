@@ -7,18 +7,19 @@
 var getElementsByClassName = function (className) {
 	// your code here
 	var arr = [];
-  
+	
 	function elementsByClass(element, className, array){
 		var elements = element.childNodes;
-		for (var i in elements){
-			child = elements[i];
+		for (var i=0; i < elements.length; i++){
+			var child = elements[i];
 			if (typeof child === 'object'){
-				//is this legal?
-				if($(child).hasClass(className)){
+				if(_.contains(child.classList, className)){
 					arr.push(child);
 				};	
 			};
-			elementsByClass(child, className, array);  
+			if (child.childNodes.length > 0){
+				elementsByClass(child, className, array);
+			};
 		};
 	};
 	elementsByClass(document.body, className, arr);
